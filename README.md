@@ -1,4 +1,4 @@
-# Firefox-FingerPrint-Analyzer"
+# Firefox-FingerPrint-Analyzer🦊
 
 [中文](#中文说明) | [English](#english)
 
@@ -111,8 +111,6 @@ Simply run `DOMAnalyzer.exe`.
 
 ---
 
-## License
-MIT License
-
 ## Author
-Your Name
+ruyi
+wechat：Charleval
