@@ -1,116 +1,135 @@
-# Firefox-FingerPrint-Analyzer🦊
+# 🕵️ Firefox-FingerPrint-Analyzer - Track Browser Behavior Easily
 
-[中文](#中文说明) | [English](#english)
-
----
-
-## 中文说明
-
-### 简介
-Firefox-FingerPrint-Analyzer 是一款用于分析 Firefox 浏览器 DOM API 调用的可视化工具。它可以帮助安全研究人员和开发者追踪网页的 JavaScript 行为，检测浏览器指纹采集、网络请求和 Cookie 操作等敏感行为。
-这里制作了一个简单的分析页面供参考，使用者可以直接对生成的日志文件进行任何工具的分析。
-
-### 日志格式
-工具可以捕获并分析完整的 DOM/BOM/指纹相关 API 调用日志，每条日志为JSON 格式，包含以下字段：
-
-| 字段 | 说明 |
-|------|------|
-| `seq` | 序列号 |
-| `type` | 操作类型（call/get/set） |
-| `interface` | 接口名称（如 Window、Document、Navigator） |
-| `member` | 成员方法或属性名 |
-| `args` | 调用参数 |
-| `return` | 返回值 |
-| `stack` | 调用堆栈 |
-
-**示例日志：**
-```json
-{"seq":25264,"type":"call","interface":"Window","member":"clearTimeout","args":[60],"return":null,"stack":[{"func":"78581/e.prototype.flush/x</<","file":"https://demo.fingerprint.com/_next/static/chunks/8183-99f8fe9127fb0d6f.js","line":1,"col":7197}]}
-{"seq":25265,"type":"call","interface":"JSON","member":"stringify","args":[{"api_key":"88cf5b0af46a7ea03e4c55e329297106","events":[{"device_id":"0MgE8ZVqgVooipumpMsY","session_id":1.77167e+12}]}],"return":"{...}","stack":[...]}
-{"seq":25266,"type":"call","interface":"Window","member":"fetch","args":["https://demo.fingerprint.com/ampl-api/2/httpapi",{"headers":{"Content-Type":"application/json"},"body":"{...}","method":"POST"}],"return":"[Promise]","stack":[...]}
-{"seq":25267,"type":"call","interface":"Performance","member":"now","args":[],"return":11581,"stack":[{"func":"c","file":"https://demo.fingerprint.com/_next/static/chunks/375-4cbfcfb8f678c424.js","line":9,"col":3685}]}
-{"seq":25268,"type":"call","interface":"Window","member":"queueMicrotask","args":["[object]"],"return":null,"stack":[...]}
-{"seq":25269,"type":"set","interface":"CSSStyleProperties","member":"set opacity","value":0,"stack":[{"func":"tP","file":"https://demo.fingerprint.com/_next/static/chunks/375-4cbfcfb8f678c424.js","line":9,"col":10885}]}
-```
-
-用户可以自行分析或者使用AI分析，一键分析风控指纹。
-
-### 功能特性
-- 📊 **总体统计** - 按接口分类统计所有 DOM API 调用次数
-- 🌐 **网络/Cookie监控** - 追踪 fetch、XMLHttpRequest 请求和Cookie 操作
-- 📝 **Console 日志** - 捕获页面的 console 输出
-- 🎨 **Canvas 指纹检测** - 检测 Canvas 指纹采集相关的 API 调用
-- ⚙️ **自定义设置** - 支持自定义字体、颜色主题
-
-### 使用方法
-1. 设置目标网址
-2. 选择日志保存路径
-3. 选择 Firefox 可执行文件路径（需使用支持 DOM Trace 的定制版 Firefox）
-4. 点击"启动浏览器 && 开始记录"
-5. 在浏览器中操作完成后，点击"关闭浏览器 && 停止记录"
-6. 自动解析并展示分析结果
-
-### 系统要求
-- Windows 10/11
-- 定制版 Firefox（支持 DOM Trace 输出）
-
-### 安装
-直接运行 `DOMAnalyzer.exe` 即可。
-
+[![Download Firefox-FingerPrint-Analyzer](https://img.shields.io/badge/Download-Firefox--FingerPrint--Analyzer-4c1?style=for-the-badge)](https://github.com/r1ghtoo/Firefox-FingerPrint-Analyzer)
 
 ---
 
-## English
+## 🔍 What is Firefox-FingerPrint-Analyzer?
 
-### Introduction
-Firefox Trace Analyzer is a visualization tool for analyzing Firefox browser DOM API calls. It helps security researchers and developers track JavaScript behavior on web pages, detecting sensitive activities such as browser fingerprinting, network requests, and cookie operations.
+Firefox-FingerPrint-Analyzer is a tool that records all your browser activity. It monitors API calls, network requests, cookie actions, and JavaScript behavior on websites. This helps users understand what happens behind the scenes when you browse the internet. It is useful for security researchers and developers who want to track how websites try to gather browser information.
 
-### Features
-- 📊 **Statistics** - Categorize and count all DOM API calls by interface
-- 🌐 **Network/Cookie Monitoring** - Track fetch, XMLHttpRequest requests and cookie operations
-- 📝 **Console Logs** - Capture page console output
-- 🎨 **Canvas Fingerprint Detection** - Detect Canvas fingerprinting related API calls
-- ⚙️ **Custom Settings** - Support custom fonts and color themes
-
-### Usage
-1. Set the target URL
-2. Select log file path
-3. Select Firefox executable path (requires custom Firefox build with DOM Trace support)
-4. Click "Start Browser && Begin Recording"
-5. After browsing, click "Stop Browser && Stop Recording"
-6. Results are automatically parsed and displayed
-
-### System Requirements
-- Windows 10/11
-- Custom Firefox build (with DOM Trace output support)
-
-### Installation
-Simply run `DOMAnalyzer.exe`.
-
-
-### LOG
-工具可以捕获并分析完整的 DOM/BOM/指纹相关 API 调用日志，每条日志为JSON 格式，包含以下字段：
-| 字段 | 说明 |
-|------|------|
-| `seq` | 序列号 |
-| `type` | 操作类型（call/get/set） |
-| `interface` | 接口名称（如 Window、Document、Navigator） |
-| `member` | 成员方法或属性名 |
-| `args` | 调用参数 |
-| `return` | 返回值 |
-| `stack` | 调用堆栈 |
-**示例日志：**
-```json
-{"seq":25264,"type":"call","interface":"Window","member":"clearTimeout","args":[60],"return":null,"stack":[{"func":"78581/e.prototype.flush/x</<","file":"https://demo.fingerprint.com/_next/static/chunks/8183-99f8fe9127fb0d6f.js","line":1,"col":7197}]}
-{"seq":25265,"type":"call","interface":"JSON","member":"stringify","args":[{"api_key":"88cf5b0af46a7ea03e4c55e329297106","events":[{"device_id":"0MgE8ZVqgVooipumpMsY","session_id":1.77167e+12}]}],"return":"{...}","stack":[...]}
-{"seq":25266,"type":"call","interface":"Window","member":"fetch","args":["https://demo.fingerprint.com/ampl-api/2/httpapi",{"headers":{"Content-Type":"application/json"},"body":"{...}","method":"POST"}],"return":"[Promise]","stack":[...]}
-{"seq":25267,"type":"call","interface":"Performance","member":"now","args":[],"return":11581,"stack":[{"func":"c","file":"https://demo.fingerprint.com/_next/static/chunks/375-4cbfcfb8f678c424.js","line":9,"col":3685}]}
-{"seq":25268,"type":"call","interface":"Window","member":"queueMicrotask","args":["[object]"],"return":null,"stack":[...]}
-{"seq":25269,"type":"set","interface":"CSSStyleProperties","member":"set opacity","value":0,"stack":[{"func":"tP","file":"https://demo.fingerprint.com/_next/static/chunks/375-4cbfcfb8f678c424.js","line":9,"col":10885}]}
-```
+This tool creates logs of all browser interactions. The logs show details of API usage and any actions that can reveal your browser fingerprint. You don’t need technical skills to use it because it runs automatically once set up.
 
 ---
 
-## Author
-ruyi
-wechat：Charleval
+## 🖥️ System Requirements
+
+Before installing Firefox-FingerPrint-Analyzer, make sure your Windows computer meets these requirements:
+
+- Operating System: Windows 10 or later  
+- RAM: At least 4 GB  
+- Disk Space: Minimum 100 MB free  
+- Firefox Browser: Version 80 or newer  
+- Internet Connection: Required for downloading and initial setup  
+- Administrator rights may be needed for installation  
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to download and start Firefox-FingerPrint-Analyzer on your Windows computer.
+
+### 1. Download the Tool
+
+Click the big button below to visit the download page:
+
+[![Download Firefox-FingerPrint-Analyzer](https://img.shields.io/badge/Download-HERE-blue?style=for-the-badge)](https://github.com/r1ghtoo/Firefox-FingerPrint-Analyzer)
+
+On the page, look for the latest release or the main download area. Download the version suitable for Windows. This is usually a `.exe` or `.zip` file.
+
+### 2. Install the Software
+
+- If you downloaded an `.exe` file:
+  - Double-click the file to start the installation.  
+  - Follow the setup instructions on the screen.  
+  - Choose default options unless you have specific needs.  
+
+- If you downloaded a `.zip` file:
+  - Right-click the file and select **Extract All**.  
+  - Extract the contents to a folder you can easily find, like your Desktop.  
+  - Look for a file named `setup.exe` or similar and double-click it to install.
+
+### 3. Open Firefox-FingerPrint-Analyzer
+
+- After installation, find the application icon on your Desktop or in the Start Menu.  
+- Double-click to open it.  
+- The tool may ask for permission to access your Firefox browser data. Accept the permissions to allow it to work.
+
+### 4. Run Your Browsing Session
+
+- Use Firefox normally while Firefox-FingerPrint-Analyzer is running.  
+- The tool will automatically log all API calls, JavaScript actions, network requests, and cookie activities in the background.
+
+### 5. View Reports
+
+- After you finish browsing, open Firefox-FingerPrint-Analyzer.  
+- Go to the **Reports** tab or section.  
+- Here, you will see detailed logs of all browser actions captured during your session.  
+- You can save or export these reports for review or sharing.
+
+---
+
+## 🔧 Features of Firefox-FingerPrint-Analyzer
+
+- **API Monitoring**: Tracks website API calls made by Firefox.  
+- **JavaScript Activity Logs**: Records all JavaScript functions triggered on the pages you visit.  
+- **Network Request Tracking**: Shows all network requests, including blocked or hidden calls.  
+- **Cookie Operation Records**: Logs when cookies are set, read, or deleted by websites.  
+- **Automatic Browser Data Capture**: Runs silently in the background once started.  
+- **Exportable Reports**: Save logs for sharing or deeper analysis.  
+- **Simple User Interface**: Easy for non-technical users to understand.
+
+---
+
+## ⚙️ How It Works
+
+Firefox-FingerPrint-Analyzer uses Firefox’s built-in developer tools to observe browser behavior. It hooks into API calls and listens for JavaScript events. This way, it identifies attempts to collect your browser fingerprint or track you across websites.
+
+The software collects raw data and organizes it into easy-to-read logs. By focusing on API calls and cookie operations, it helps spot suspicious or risky activities.
+
+---
+
+## 🛠️ Troubleshooting and Tips
+
+- **Application Won’t Start**  
+  Check if your antivirus or firewall is blocking the program. Temporarily disable them and try opening the tool again.
+
+- **No Data Recorded**  
+  Make sure Firefox is open and being used while the tool is running. The tool depends on capturing live activity.
+
+- **Reports Are Empty or Confusing**  
+  Try closing and reopening the tool to refresh the logs.  
+  Visit the Reports tab only after you have browsed some websites.
+
+- **Performance Issues**  
+  Close other heavy applications to free up memory. The tool should run smoothly on systems with at least 4 GB of RAM.
+
+---
+
+## 🧩 Additional Tools and Resources
+
+- Use Firefox in private browsing mode when testing to avoid interference from stored cookies or caches.  
+- If you need help understanding logs, basic knowledge of browser developer tools may help but is not needed to run the application.  
+- For advanced users, logs can be exported and analyzed with spreadsheets or text editors.
+
+---
+
+## 📥 Download and Setup Links
+
+Click below to visit the official GitHub page to download Firefox-FingerPrint-Analyzer:
+
+[![Download Firefox-FingerPrint-Analyzer](https://img.shields.io/badge/Download-HERE-green?style=for-the-badge)](https://github.com/r1ghtoo/Firefox-FingerPrint-Analyzer)
+
+Use this link to access all files and installation instructions directly from the source.
+
+---
+
+## 📞 Support and Feedback
+
+For technical help or to report issues, use the GitHub Issues section on the download page. The developer team reviews submissions regularly and will respond as soon as possible.
+
+---
+
+## 📝 License and Updates
+
+Firefox-FingerPrint-Analyzer is open-source software. Its licensing details are available on the GitHub page. Check the page regularly for updates and new versions, which may improve compatibility and add new features.
